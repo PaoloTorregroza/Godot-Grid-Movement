@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://8dir3rx3x8jd"]
+
+[ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_rclbw"]
+[ext_resource type="PackedScene" uid="uid://cv76coxf2k183" path="res://entities/components/life_component/life_component.tscn" id="2_65tk5"]
+[ext_resource type="PackedScene" uid="uid://bosqbup2t0x3g" path="res://entities/components/base_entity_component/base_entity_component.tscn" id="3_6ffoy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2a2c0"]
+size = Vector3(1, 1.4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv72c"]
+albedo_color = Color(0.368627, 0.670588, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qv8fy"]
+points = PackedVector3Array(0.5, 0.695652, 0.5, -0.5, -0.695652, -0.5, 0.5, -0.695652, -0.5, -0.5, -0.695652, 0.5, -0.5, 0.695652, -0.5, 0.5, -0.695652, 0.5, 0.5, 0.695652, -0.5, -0.5, 0.695652, 0.5)
+
+[node name="Goblin" type="CharacterBody3D"]
+script = ExtResource("1_rclbw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2a2c0")
+surface_material_override/0 = SubResource("StandardMaterial3D_xv72c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_qv8fy")
+
+[node name="LifeComponent" parent="." instance=ExtResource("2_65tk5")]
+life = 5
+
+[node name="BaseEntityComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_6ffoy")]
+parent = NodePath("..")
+entity_name = "goblin"
+
+[connection signal="died" from="LifeComponent" to="." method="_on_life_component_died"]

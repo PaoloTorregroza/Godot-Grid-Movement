@@ -1,0 +1,107 @@
+{
+	"categories": [
+		{
+			"uuid": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "59265d46-1c82-4251-b9dc-716b08843be4",
+			"title": "Todo",
+			"tasks": [
+				"830750d0-5623-4db7-a0bc-dab0e8894473",
+				"d99276c5-01d3-43f0-acff-0233b63338b2",
+				"98c3a770-f700-4d1b-928d-252a89a8d745",
+				"ce9d48ee-25c2-42b3-8f42-76b269c39a9d",
+				"30133a0a-0f4c-4fb2-a9de-848bbba66cc7"
+			]
+		},
+		{
+			"uuid": "a0eaee3d-9e97-49b7-b220-3be9bc49e005",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "df9c8eef-fa91-40b1-92f2-2a1d91931c3d",
+			"title": "Done",
+			"tasks": [
+				"daeb58ac-28ef-4cd9-b576-38035a110fa4",
+				"118d791e-65f2-4b7f-a113-fdd0ec5c4999",
+				"b592465a-8132-41a4-9dee-fba947df9279"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "daeb58ac-28ef-4cd9-b576-38035a110fa4",
+			"title": "Create a dummy enemy",
+			"description": "",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "b592465a-8132-41a4-9dee-fba947df9279",
+			"title": "Be able to attack that dummy enemy",
+			"description": "Attack only if exactly at one square from enemy",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "830750d0-5623-4db7-a0bc-dab0e8894473",
+			"title": "Create turn based system ",
+			"description": "Move only one square at a time or attack one single time, then enemies will do something",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "d99276c5-01d3-43f0-acff-0233b63338b2",
+			"title": "Enemy simple testing AI",
+			"description": "",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "118d791e-65f2-4b7f-a113-fdd0ec5c4999",
+			"title": "Kill entities with life component",
+			"description": "",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "98c3a770-f700-4d1b-928d-252a89a8d745",
+			"title": "Make movement smooth",
+			"description": "",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "ce9d48ee-25c2-42b3-8f42-76b269c39a9d",
+			"title": "base stats system",
+			"description": "",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		},
+		{
+			"uuid": "30133a0a-0f4c-4fb2-a9de-848bbba66cc7",
+			"title": "inventory",
+			"description": "",
+			"category": "8a5059e6-cee8-44bb-8a42-9ae9d251be0e",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"59265d46-1c82-4251-b9dc-716b08843be4"
+			],
+			[
+				"a0eaee3d-9e97-49b7-b220-3be9bc49e005"
+			],
+			[
+				"df9c8eef-fa91-40b1-92f2-2a1d91931c3d"
+			]
+		]
+	}
+}

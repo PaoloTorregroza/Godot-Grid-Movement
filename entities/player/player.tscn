@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3vkfw2v4umjl"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_12otp"]
+[ext_resource type="PackedScene" uid="uid://bosqbup2t0x3g" path="res://entities/components/base_entity_component/base_entity_component.tscn" id="2_1e4y3"]
+[ext_resource type="PackedScene" uid="uid://cv76coxf2k183" path="res://entities/components/life_component/life_component.tscn" id="3_7i8fx"]
+[ext_resource type="PackedScene" uid="uid://do6qc7wrx6eyt" path="res://entities/components/player_actions_component/player_actions_component.tscn" id="4_aqnbt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dstq2"]
+albedo_color = Color(0.988235, 0.568627, 0.568627, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5t8tg"]
+material = SubResource("StandardMaterial3D_dstq2")
+size = Vector3(1, 1.815, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_11cu1"]
+points = PackedVector3Array(0.5, 0.881482, 0.5, -0.5, -0.896296, -0.5, -0.491667, -0.881482, 0.5, -0.5, 0.896296, -0.5, 0.5, -0.881482, -0.491667, 0.5, -0.881482, 0.5, -0.491667, 0.881482, 0.5, 0.5, 0.881482, -0.491667)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_12otp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5t8tg")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_11cu1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.997654, -0.0385164, 0.0565859, 0, 0.826668, 0.56269, -0.0684506, -0.56137, 0.824729, 0.254026, 4.25468, 2.73182)
+
+[node name="BaseEntityComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("2_1e4y3")]
+parent = NodePath("..")
+entity_name = "player"
+
+[node name="LifeComponent" parent="." instance=ExtResource("3_7i8fx")]
+
+[node name="PlayerActionsComponent" parent="." instance=ExtResource("4_aqnbt")]
+
+[connection signal="died" from="LifeComponent" to="." method="_on_life_component_died"]

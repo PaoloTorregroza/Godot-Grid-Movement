@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqkq7kb8jpirf"]
+
+[ext_resource type="Script" path="res://world/world_controller.gd" id="1_1bbq4"]
+[ext_resource type="MeshLibrary" uid="uid://cyfme3xdajttx" path="res://world/mesh_lib_dungeon.tres" id="1_dr37q"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_1bbq4")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_dr37q")
+cell_size = Vector3(5, 5, 5)
+data = {
+"cells": PackedInt32Array(65533, 5, 0, 65530, 5, 0, 65530, 2, 1048577, 65530, 6, 655361, 65533, 6, 1441793, 65534, 5, 1441793, 65534, 2, 1, 65534, 3, 0, 65533, 3, 0, 65532, 3, 0, 65531, 3, 0, 65530, 3, 0, 65530, 4, 0, 65531, 5, 0, 65532, 5, 0, 65534, 4, 0, 65533, 4, 0, 65532, 4, 0, 65531, 4, 0, 65532, 6, 0, 65531, 6, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)

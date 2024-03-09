@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bosqbup2t0x3g"]
+
+[ext_resource type="Script" path="res://entities/components/base_entity_component/base_entity_component.gd" id="1_4l2rb"]
+
+[node name="BaseEntityComponent" type="Node3D"]
+script = ExtResource("1_4l2rb")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -5, 0)
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.847059, 0, 0, 1)

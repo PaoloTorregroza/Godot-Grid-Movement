@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfaga6uxrpb55"]
+
+[ext_resource type="PackedScene" uid="uid://chiyq3cq11fqv" path="res://assets/Thirsty Corridor.obj" id="1_tfy57"]
+[ext_resource type="Texture2D" uid="uid://cxndpuclh0uoh" path="res://assets/Thirsty Corridor.png" id="2_v7j3l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3qn1"]
+albedo_texture = ExtResource("2_v7j3l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfscx"]
+size = Vector3(5, 1.5, 5)
+
+[node name="Thirsty Corridor" instance=ExtResource("1_tfy57")]
+
+[node name="ThirstyCorridor" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i3qn1")
+
+[node name="RigidBody3D" type="StaticBody3D" parent="ThirstyCorridor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThirstyCorridor/RigidBody3D" index="0"]
+shape = SubResource("BoxShape3D_lfscx")
